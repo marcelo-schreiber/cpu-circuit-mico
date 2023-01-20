@@ -4,16 +4,9 @@ abstract: |
   processador MICO X1, com um somador eficiente que será usado na
   Unidade Lógica de Aritmética (ULA).
 author:
-- 
+- Marcelo Schreiber
 title: Relatório MICO X1
 ---
-
-::: acronym
-:::
-
-::: IEEEkeywords
-MICO X, processador, somador.
-:::
 
 # Somador com atraso minimizado
 
@@ -68,13 +61,20 @@ Para fim de testes, será realizado um simples laço de repetição que
 contará de 1 até 5 que será colocado na memória de instruções da Figura
 4. Em Assembly simples e hexadecimal, sabendo que a operação tem 4 bits,
 cada registrador 4 bits e uma constante com 16 bits, totaliza-se 32
-bits, assim:\
-\
-\
-0xB0010001\
-0xB0020001\
-0xB0030005\
-0xE2300003\
-0x12120000\
-0xD000FFFE\
-0xF0000000\
+bits, assim:
+
+ADDi R(1), 1
+ADDi R(2), 1
+ADDi R(3), 5
+BEQ R(2), R(3), 3
+ADD R(2), R(1), R(1)
+JMP -2
+HALT
+
+0xB0010001
+0xB0020001
+0xB0030005
+0xE2300003
+0x12120000
+0xD000FFFE
+0xF0000000
