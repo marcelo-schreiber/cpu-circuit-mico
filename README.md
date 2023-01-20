@@ -62,19 +62,19 @@ contará de 1 até 5 que será colocado na memória de instruções da Figura
 4. Em Assembly simples e hexadecimal, sabendo que a operação tem 4 bits,
 cada registrador 4 bits e uma constante com 16 bits, totaliza-se 32
 bits, assim:
+ <br />
+ADDi R(1), 1 <br />
+ADDi R(2), 1 <br />
+ADDi R(3), 5 <br />
+BEQ R(2), R(3), 3 <br />
+ADD R(2), R(1), R(1) <br />
+JMP -2 <br />
+HALT <br />
 
-ADDi R(1), 1
-ADDi R(2), 1
-ADDi R(3), 5
-BEQ R(2), R(3), 3
-ADD R(2), R(1), R(1)
-JMP -2
-HALT
-
-0xB0010001
-0xB0020001
-0xB0030005
-0xE2300003
-0x12120000
-0xD000FFFE
-0xF0000000
+0xB0010001 <br />
+0xB0020001 <br />
+0xB0030005 <br /> 
+0xE2300003 <br />
+0x12120000 <br />
+0xD000FFFE <br />
+0xF0000000 <br />
